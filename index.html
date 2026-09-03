@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shirzad CyberLab</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🛡️ <span>SHIRZAD</span> CYBERLAB
+    </div>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <nav id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#labs">Labs</a>
+        <a href="#terminal">Terminal</a>
+        <a href="#about">About</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ● CYBERSECURITY LEARNING PLATFORM
+        </div>
+
+        <h1>
+            Welcome to
+            <span>Shirzad</span>
+            CyberLab
+        </h1>
+
+        <p>
+            Learn cybersecurity, web security and ethical
+            hacking concepts through safe interactive labs.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#labs" class="btn primary">
+                Start Labs →
+            </a>
+
+            <a href="#terminal" class="btn secondary">
+                Open Terminal
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- TERMINAL -->
+
+    <div class="terminal-card">
+
+        <div class="terminal-top">
+
+            <div class="terminal-dots">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+
+            <span>shirzad@cyberlab</span>
+
+        </div>
+
+        <div class="terminal-content">
+
+            <p>
+                <span class="green">$</span>
+                system-status
+            </p>
+
+            <p class="success">
+                [+] CyberLab Online
+            </p>
+
+            <p>
+                <span class="green">$</span>
+                security-mode
+            </p>
+
+            <p class="success">
+                [+] Educational Mode
+            </p>
+
+            <p>
+                <span class="green">$</span>
+                user
+            </p>
+
+            <p class="yellow">
+                [*] Shirzad
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LABS ================= -->
+
+<section class="labs" id="labs">
+
+    <div class="section-title">
+
+        <div class="badge">
+            PRACTICE LABS
+        </div>
+
+        <h2>Cybersecurity Labs</h2>
+
+        <p>
+            Practice basic security concepts safely.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <!-- PASSWORD -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                🔑
+            </div>
+
+            <h3>Password Analyzer</h3>
+
+            <p>
+                Test the strength of a password locally.
+            </p>
+
+            <button class="card-btn" onclick="openLab('password')">
+                Open Lab →
+            </button>
+
+        </div>
+
+
+        <!-- LOGIN -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                🔐
+            </div>
+
+            <h3>Login Security</h3>
+
+            <p>
+                Practice authentication and login security.
+            </p>
+
+            <button class="card-btn" onclick="openLab('login')">
+                Open Lab →
+            </button>
+
+        </div>
+
+
+        <!-- XSS -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                🧪
+            </div>
+
+            <h3>XSS Safe Demo</h3>
+
+            <p>
+                Learn how websites safely handle user input.
+            </p>
+
+            <button class="card-btn" onclick="openLab('xss')">
+                Open Lab →
+            </button>
+
+        </div>
+
+
+        <!-- SCORE -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                📊
+            </div>
+
+            <h3>Security Score</h3>
+
+            <p>
+                Check your basic security configuration.
+            </p>
+
+            <button class="card-btn" onclick="openLab('score')">
+                Open Lab →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LAB PANEL ================= -->
+
+<section class="lab-panel">
+
+    <div id="labContent">
+
+        <div class="empty-lab">
+
+            <div class="big-icon">
+                🛡️
+            </div>
+
+            <h2>Select a Lab</h2>
+
+            <p>
+                Choose one of the security labs above
+                to begin learning.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TERMINAL ================= -->
+
+<section class="terminal-section" id="terminal">
+
+    <div class="section-title">
+
+        <div class="badge">
+            INTERACTIVE TERMINAL
+        </div>
+
+        <h2>Shirzad Terminal</h2>
+
+        <p>
+            Try educational commands inside this local simulator.
+        </p>
+
+    </div>
+
+
+    <div class="big-terminal">
+
+        <div class="terminal-top">
+
+            <div class="terminal-dots">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+
+            <span>shirzad@cyberlab:~</span>
+
+        </div>
+
+
+        <div id="terminalOutput" class="terminal-output">
+
+            <p>
+                Shirzad CyberLab Terminal
+            </p>
+
+            <p class="success">
+                Type <b>help</b> to see available commands.
+            </p>
+
+        </div>
+
+
+        <div class="terminal-input">
+
+            <span>$</span>
+
+            <input
+                type="text"
+                id="terminalInput"
+                placeholder="Type a command..."
+                autocomplete="off"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="about-box">
+
+        <div class="badge">
+            ABOUT
+        </div>
+
+        <h2>
+            Shirzad CyberLab
+        </h2>
+
+        <p>
+            A personal cybersecurity learning project created
+            for practicing web-security concepts in a controlled
+            educational environment.
+        </p>
+
+        <div class="warning">
+
+            ⚠️
+            Only test systems that you own or have
+            explicit permission to test.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        🛡️ SHIRZAD CYBERLAB
+    </h3>
+
+    <p>
+        Ethical Hacking • Cybersecurity • Learning
+    </p>
+
+    <small>
+        © 2026 Shirzad CyberLab
+    </small>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
